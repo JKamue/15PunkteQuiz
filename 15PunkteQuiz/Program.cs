@@ -16,7 +16,7 @@ namespace _15PunkteQuiz
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Quiz());
         }
     }
 }
