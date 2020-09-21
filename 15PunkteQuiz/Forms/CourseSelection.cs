@@ -16,27 +16,27 @@ namespace _15PunkteQuiz.Forms
         public CourseSelection()
         {
             InitializeComponent();
-            lvQuestions.FullRowSelect = true;
+            lvCourses.FullRowSelect = true;
             var item1 = new ListViewItem("item1", 0);
-            ListViewExtender extender = new ListViewExtender(lvQuestions);
+            ListViewExtender extender = new ListViewExtender(lvCourses);
             ListViewButtonColumn editItemButton = new ListViewButtonColumn(1);
             editItemButton.Click += OpenCourse;
             editItemButton.FixedWidth = true;
 
-            lvQuestions.Columns.Add("Kursname", 250, HorizontalAlignment.Left);
-            lvQuestions.Columns.Add("Öffnen", 150, HorizontalAlignment.Left);
+            lvCourses.Columns.Add("Kursname", 250, HorizontalAlignment.Left);
+            lvCourses.Columns.Add("Öffnen", 150, HorizontalAlignment.Left);
             extender.AddColumn(editItemButton);
 
             for (int i = 0; i < 3; i++)
             {
                 var kurse = new List<string>{"Biologie", "Chemie", "Was anderes"};
-                ListViewItem item = lvQuestions.Items.Add(kurse[i]);
+                ListViewItem item = lvCourses.Items.Add(kurse[i]);
                 item.SubItems.Add("Öffnen");
                 item.Tag = i;
             }
         }
 
-        private void lblHelp_Click(object sender, EventArgs e)
+        private void btnHelp_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Ich bin jederzeit unter mail@jkamue.de zu erreichen falls Sie Probleme haben!","Hilfe");
         }

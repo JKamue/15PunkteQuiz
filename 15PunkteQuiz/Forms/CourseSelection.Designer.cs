@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.lblHeading = new System.Windows.Forms.Label();
-            this.lvQuestions = new System.Windows.Forms.ListView();
-            this.btnNewQuestion = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lvCourses = new System.Windows.Forms.ListView();
+            this.btnNewCourse = new System.Windows.Forms.Button();
+            this.lblNewCourseName = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblHelp = new System.Windows.Forms.Button();
+            this.btnHelp = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,43 +49,43 @@
             this.lblHeading.Text = "Kursauswahl";
             this.lblHeading.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lvQuestions
+            // lvCourses
             // 
-            this.lvQuestions.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lvQuestions.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvQuestions.GridLines = true;
-            this.lvQuestions.HideSelection = false;
-            this.lvQuestions.Location = new System.Drawing.Point(101, 138);
-            this.lvQuestions.Name = "lvQuestions";
-            this.lvQuestions.Size = new System.Drawing.Size(598, 351);
-            this.lvQuestions.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.lvQuestions.TabIndex = 3;
-            this.lvQuestions.UseCompatibleStateImageBehavior = false;
-            this.lvQuestions.View = System.Windows.Forms.View.Details;
+            this.lvCourses.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lvCourses.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvCourses.GridLines = true;
+            this.lvCourses.HideSelection = false;
+            this.lvCourses.Location = new System.Drawing.Point(101, 138);
+            this.lvCourses.Name = "lvCourses";
+            this.lvCourses.Size = new System.Drawing.Size(598, 351);
+            this.lvCourses.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.lvCourses.TabIndex = 3;
+            this.lvCourses.UseCompatibleStateImageBehavior = false;
+            this.lvCourses.View = System.Windows.Forms.View.Details;
             // 
-            // btnNewQuestion
+            // btnNewCourse
             // 
-            this.btnNewQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewQuestion.Location = new System.Drawing.Point(367, 127);
-            this.btnNewQuestion.Name = "btnNewQuestion";
-            this.btnNewQuestion.Size = new System.Drawing.Size(225, 37);
-            this.btnNewQuestion.TabIndex = 4;
-            this.btnNewQuestion.Text = "Hinzufügen";
-            this.btnNewQuestion.UseVisualStyleBackColor = true;
+            this.btnNewCourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewCourse.Location = new System.Drawing.Point(367, 127);
+            this.btnNewCourse.Name = "btnNewCourse";
+            this.btnNewCourse.Size = new System.Drawing.Size(225, 37);
+            this.btnNewCourse.TabIndex = 4;
+            this.btnNewCourse.Text = "Hinzufügen";
+            this.btnNewCourse.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // lblNewCourseName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(222, 54);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(277, 30);
-            this.textBox1.TabIndex = 5;
+            this.lblNewCourseName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNewCourseName.Location = new System.Drawing.Point(222, 54);
+            this.lblNewCourseName.Name = "lblNewCourseName";
+            this.lblNewCourseName.Size = new System.Drawing.Size(277, 30);
+            this.lblNewCourseName.TabIndex = 5;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.btnNewQuestion);
+            this.groupBox1.Controls.Add(this.lblNewCourseName);
+            this.groupBox1.Controls.Add(this.btnNewCourse);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(101, 508);
             this.groupBox1.Name = "groupBox1";
@@ -103,25 +103,25 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Kursname: ";
             // 
-            // lblHelp
+            // btnHelp
             // 
-            this.lblHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHelp.Location = new System.Drawing.Point(624, 720);
-            this.lblHelp.Name = "lblHelp";
-            this.lblHelp.Size = new System.Drawing.Size(75, 38);
-            this.lblHelp.TabIndex = 7;
-            this.lblHelp.Text = "Hilfe";
-            this.lblHelp.UseVisualStyleBackColor = true;
-            this.lblHelp.Click += new System.EventHandler(this.lblHelp_Click);
+            this.btnHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHelp.Location = new System.Drawing.Point(624, 720);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(75, 38);
+            this.btnHelp.TabIndex = 7;
+            this.btnHelp.Text = "Hilfe";
+            this.btnHelp.UseVisualStyleBackColor = true;
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
             // 
             // CourseSelection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(794, 770);
-            this.Controls.Add(this.lblHelp);
+            this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.lvQuestions);
+            this.Controls.Add(this.lvCourses);
             this.Controls.Add(this.lblHeading);
             this.Name = "CourseSelection";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -135,11 +135,11 @@
         #endregion
 
         private System.Windows.Forms.Label lblHeading;
-        private System.Windows.Forms.ListView lvQuestions;
-        private System.Windows.Forms.Button btnNewQuestion;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ListView lvCourses;
+        private System.Windows.Forms.Button btnNewCourse;
+        private System.Windows.Forms.TextBox lblNewCourseName;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button lblHelp;
+        private System.Windows.Forms.Button btnHelp;
     }
 }
