@@ -29,6 +29,7 @@ namespace _15PunkteQuiz
             bntAnswerB.Font = buttonFont;
             bntAnswerC.Font = buttonFont;
             bntAnswerD.Font = buttonFont;
+            bntAnswerD.Font = buttonFont;
         }
     }
 }
