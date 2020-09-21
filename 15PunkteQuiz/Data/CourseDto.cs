@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _15PunkteQuiz.Data
 {
-    class CourseDto
+    public class CourseDto
     {
         public string Id;
         public string Name;

@@ -56,7 +56,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\CourseDto.cs" />
+    <Compile Include="Data\IDataSource.cs" />
     <Compile Include="Data\QuestionDto.cs" />
+    <Compile Include="Data\SqliteDb.cs" />
     <Compile Include="Forms\CourseSelection.cs">
       <SubType>Form</SubType>
     </Compile>
