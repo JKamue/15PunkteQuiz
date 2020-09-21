@@ -13,7 +13,7 @@ namespace _15PunkteQuiz.Data
         List<QuestionDto> GetRandomQuestionByCourse(CourseDto course);
 
         void AddCourse(CourseDto course);
-        void AddQuestion(QuestionDto question);
+        void AddQuestionToCourse(QuestionDto question, CourseDto course);
         void EditQuestion(QuestionDto question);
     }
 }

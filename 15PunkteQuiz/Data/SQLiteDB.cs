@@ -58,12 +58,14 @@ namespace _15PunkteQuiz.Data
 
         public void AddCourse(CourseDto course)
         {
-            throw new NotImplementedException();
+            _dbConnection.Execute("INSERT INTO Courses (Id, Name) Values (@id, @name)", new {id = course.Id, name = course.Name});
         }
 
-        public void AddQuestion(QuestionDto question)
+        public void AddQuestionToCourse(QuestionDto question, CourseDto course)
         {
-            throw new NotImplementedException();
+            _dbConnection.Execute(
+                "INSERT INTO Questions(Id, CourseId, Text, Difficulty, WrongAnswer1, WrongAnswer2, WrongAnswer3, RightAnswer) VALUES(@id, @courseId, @text, @difficulty, @wrongAnswer1, @wrongAnswer2, @wrongAnswer3, @rightAnswer)",
+                new {id = question.Id, courseId = course.Id, text = question.Title, difficulty = question.Difficulty, wrongAnswer1 = question.WrongAnswer1, wrongAnswer2 = question.WrongAnswer2, wrongAnswer3 = question.WrongAnswer3, rightAnswer = question.RightAnswer });
         }
 
         public void EditQuestion(QuestionDto question)
