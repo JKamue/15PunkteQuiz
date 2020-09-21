@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\CourseSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CourseSelection.Designer.cs">
+      <DependentUpon>CourseSelection.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\QuestionEditor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +73,9 @@
     <Compile Include="Other\ListViewExtender.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\CourseSelection.resx">
+      <DependentUpon>CourseSelection.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\QuestionEditor.resx">
       <DependentUpon>QuestionEditor.cs</DependentUpon>
     </EmbeddedResource>
