@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
-namespace _15PunkteQuiz
+namespace _15PunkteQuiz.Forms
 {
     public partial class Quiz : Form
     {

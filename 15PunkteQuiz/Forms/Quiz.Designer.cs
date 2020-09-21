@@ -1,4 +1,4 @@
-﻿namespace _15PunkteQuiz
+﻿namespace _15PunkteQuiz.Forms
 {
     partial class Quiz
     {
