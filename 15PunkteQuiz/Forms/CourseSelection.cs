@@ -75,13 +75,17 @@ namespace _15PunkteQuiz.Forms
 
         private void PlayCourse(object sender, ListViewColumnMouseEventArgs e)
         {
-
-            MessageBox.Show(this, @"Id: " + e.Item.Tag);
+            var course = GetCourseFromEvent(e);
+            var game = new Quiz(Db, course);
+            Hide();
+            game.ShowDialog();
+            Show();
         }
 
         private void btnNewCourse_Click(object sender, EventArgs e)
         {
             var name = lblNewCourseName.Text;
+            lblNewCourseName.Text = "";
             var course = new CourseDto(Guid.NewGuid().ToString("N"), name);
             Db.AddCourse(course);
             UpdateCourseList();

@@ -239,7 +239,9 @@
             this.Controls.Add(this.lblQuestion);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblHeading);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.KeyPreview = true;
+            this.MaximizeBox = false;
             this.Name = "QuestionEditor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Wer wird 15 Punkte Schüler?";

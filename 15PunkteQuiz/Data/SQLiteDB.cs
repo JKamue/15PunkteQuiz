@@ -51,9 +51,11 @@ namespace _15PunkteQuiz.Data
            return _dbConnection.Query<QuestionDto>("SELECT Id, Text, Difficulty, WrongAnswer1, WrongAnswer2, WrongAnswer3, RightAnswer FROM Questions WHERE CourseId = @id", new {id = course.Id}).ToList();
         }
 
-        public List<QuestionDto> GetRandomQuestionByCourse(CourseDto course)
+        public QuestionDto GetRandomQuestionByCourse(CourseDto course, int difficulty)
         {
-            throw new NotImplementedException();
+            return _dbConnection.Query<QuestionDto>(
+                "SELECT Id, Text, Difficulty, WrongAnswer1, WrongAnswer2, WrongAnswer3, RightAnswer FROM Questions WHERE CourseId = @id AND Difficulty = @diff ORDER BY RANDOM() LIMIT 1",
+                new {id = course.Id, diff = difficulty }).First();
         }
 
         public void AddCourse(CourseDto course)

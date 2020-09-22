@@ -10,7 +10,7 @@ namespace _15PunkteQuiz.Data
     {
         List<CourseDto> GetAllCourses();
         List<QuestionDto> GetAllQuestionsByCourse(CourseDto course);
-        List<QuestionDto> GetRandomQuestionByCourse(CourseDto course);
+        QuestionDto GetRandomQuestionByCourse(CourseDto course, int difficulty);
 
         void AddCourse(CourseDto course);
         void AddQuestionToCourse(QuestionDto question, CourseDto course);

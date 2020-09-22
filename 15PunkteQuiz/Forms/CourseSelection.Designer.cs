@@ -124,6 +124,8 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lvCourses);
             this.Controls.Add(this.lblHeading);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "CourseSelection";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Wer wird 15 Punkte Schüler?";

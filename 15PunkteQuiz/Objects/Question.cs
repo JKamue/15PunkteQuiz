@@ -7,17 +7,17 @@ using System.Threading.Tasks;
 
 namespace _15PunkteQuiz.Objects
 {
-    class Question
+    public class Question
     {
         public readonly string Title;
-        public readonly int Difficulty;
-        private readonly ImmutableList<string> Answers;
+        public readonly string Difficulty;
+        public readonly ImmutableList<string> Answers;
 
         private readonly string _rightAnswer;
         private readonly ImmutableList<string> _wrongAnswers;
         private readonly int _rightAnswerNumber;
 
-        public Question(string title, int difficulty, string rightAnswer, ImmutableList<string> wrongAnswers)
+        public Question(string title, string difficulty, string rightAnswer, ImmutableList<string> wrongAnswers)
         {
             Title = title;
             Difficulty = difficulty;
@@ -29,9 +29,9 @@ namespace _15PunkteQuiz.Objects
             Answers = _wrongAnswers.Insert(_rightAnswerNumber, _rightAnswer);
         }
 
-        public bool AnswerWasRight(int num)
+        public int GetRightAnswer()
         {
-            return (num == _rightAnswerNumber);
+            return _rightAnswerNumber;
         }
     }
 }
