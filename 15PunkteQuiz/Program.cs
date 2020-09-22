@@ -18,8 +18,8 @@ namespace _15PunkteQuiz
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            var test = new SqliteDb();
-            Application.Run(new CourseSelection());
+            var db = new SqliteDb();
+            Application.Run(new CourseSelection(db));
         }
     }
 }

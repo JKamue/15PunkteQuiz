@@ -14,9 +14,9 @@ namespace _15PunkteQuiz.Forms
 {
     public partial class CourseSelection : Form
     {
-        private SqliteDb Db;
+        private IDataSource Db;
 
-        public CourseSelection(SqliteDb db)
+        public CourseSelection(IDataSource db)
         {
             InitializeComponent();
             SetupListView();
@@ -31,8 +31,8 @@ namespace _15PunkteQuiz.Forms
             ListViewExtender extender = new ListViewExtender(lvCourses);
             ListViewButtonColumn playCourseButton = new ListViewButtonColumn(1);
             ListViewButtonColumn editCourseButton = new ListViewButtonColumn(2);
-            playCourseButton.Click += EditCourse;
-            editCourseButton.Click += PlayCourse;
+            playCourseButton.Click += PlayCourse;
+            editCourseButton.Click += EditCourse;
             playCourseButton.FixedWidth = true;
             editCourseButton.FixedWidth = true;
 
@@ -61,10 +61,21 @@ namespace _15PunkteQuiz.Forms
         }
         private void EditCourse(object sender, ListViewColumnMouseEventArgs e)
         {
-            MessageBox.Show(this, @"Id: " + e.Item.Tag);
+            var course = GetCourseFromEvent(e);
+            var editor = new QuestionManager(Db, course);
+            Hide();
+            editor.ShowDialog();
+            Show();
         }
+
+        private CourseDto GetCourseFromEvent(ListViewColumnMouseEventArgs e)
+        {
+            return new CourseDto(e.Item.Tag.ToString(), e.Item.Text);
+        }
+
         private void PlayCourse(object sender, ListViewColumnMouseEventArgs e)
         {
+
             MessageBox.Show(this, @"Id: " + e.Item.Tag);
         }
 

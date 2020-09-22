@@ -15,5 +15,6 @@ namespace _15PunkteQuiz.Data
         void AddCourse(CourseDto course);
         void AddQuestionToCourse(QuestionDto question, CourseDto course);
         void EditQuestion(QuestionDto question);
+        void DeleteQuestion(QuestionDto question);
     }
 }

@@ -48,7 +48,7 @@ namespace _15PunkteQuiz.Data
 
         public List<QuestionDto> GetAllQuestionsByCourse(CourseDto course)
         {
-            throw new NotImplementedException();
+           return _dbConnection.Query<QuestionDto>("SELECT Id, Text, Difficulty, WrongAnswer1, WrongAnswer2, WrongAnswer3, RightAnswer FROM Questions WHERE CourseId = @id", new {id = course.Id}).ToList();
         }
 
         public List<QuestionDto> GetRandomQuestionByCourse(CourseDto course)
@@ -65,12 +65,17 @@ namespace _15PunkteQuiz.Data
         {
             _dbConnection.Execute(
                 "INSERT INTO Questions(Id, CourseId, Text, Difficulty, WrongAnswer1, WrongAnswer2, WrongAnswer3, RightAnswer) VALUES(@id, @courseId, @text, @difficulty, @wrongAnswer1, @wrongAnswer2, @wrongAnswer3, @rightAnswer)",
-                new {id = question.Id, courseId = course.Id, text = question.Title, difficulty = question.Difficulty, wrongAnswer1 = question.WrongAnswer1, wrongAnswer2 = question.WrongAnswer2, wrongAnswer3 = question.WrongAnswer3, rightAnswer = question.RightAnswer });
+                new {id = question.Id, courseId = course.Id, text = question.Text, difficulty = question.Difficulty, wrongAnswer1 = question.WrongAnswer1, wrongAnswer2 = question.WrongAnswer2, wrongAnswer3 = question.WrongAnswer3, rightAnswer = question.RightAnswer });
         }
 
         public void EditQuestion(QuestionDto question)
         {
             throw new NotImplementedException();
+        }
+
+        public void DeleteQuestion(QuestionDto question)
+        {
+            _dbConnection.Execute("DELETE FROM Questions WHERE Id = @id", new { id = question.Id });
         }
     }
 }

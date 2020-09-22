@@ -57,7 +57,6 @@
             this.lvQuestions.TabIndex = 1;
             this.lvQuestions.UseCompatibleStateImageBehavior = false;
             this.lvQuestions.View = System.Windows.Forms.View.Details;
-            this.lvQuestions.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lvQuestions_ItemSelectionChanged);
             // 
             // btnNewQuestion
             // 
@@ -68,6 +67,7 @@
             this.btnNewQuestion.TabIndex = 2;
             this.btnNewQuestion.Text = "Neue Frage";
             this.btnNewQuestion.UseVisualStyleBackColor = true;
+            this.btnNewQuestion.Click += new System.EventHandler(this.btnNewQuestion_Click);
             // 
             // QuestionManager
             // 

@@ -204,6 +204,7 @@
             this.lblSaveChanges.TabIndex = 17;
             this.lblSaveChanges.Text = "speichern";
             this.lblSaveChanges.UseVisualStyleBackColor = true;
+            this.lblSaveChanges.Click += new System.EventHandler(this.lblSaveChanges_Click);
             // 
             // lblDiscard
             // 
@@ -214,6 +215,7 @@
             this.lblDiscard.TabIndex = 18;
             this.lblDiscard.Text = "verwerfen";
             this.lblDiscard.UseVisualStyleBackColor = true;
+            this.lblDiscard.Click += new System.EventHandler(this.lblDiscard_Click);
             // 
             // QuestionEditor
             // 
