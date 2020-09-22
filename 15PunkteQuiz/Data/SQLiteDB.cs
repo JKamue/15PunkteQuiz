@@ -70,7 +70,10 @@ namespace _15PunkteQuiz.Data
 
         public void EditQuestion(QuestionDto question)
         {
-            throw new NotImplementedException();
+            _dbConnection.Execute(
+                "UPDATE Questions SET Text = @text, Difficulty = @difficulty, WrongAnswer1 = @wrongAnswer1, WrongAnswer2 = @wrongAnswer2, WrongAnswer3 = @wrongAnswer3, RightAnswer = @rightAnswer WHERE Id = @id",
+                new { text = question.Text, difficulty = question.Difficulty, wrongAnswer1 = question.WrongAnswer1, wrongAnswer2 = question.WrongAnswer2, wrongAnswer3 = question.WrongAnswer3, rightAnswer = question.RightAnswer, id = question.Id }
+                );
         }
 
         public void DeleteQuestion(QuestionDto question)
