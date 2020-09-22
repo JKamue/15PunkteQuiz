@@ -60,8 +60,10 @@ namespace _15PunkteQuiz.Forms
             RoundNumber++;
             var known = true;
             Question question = null;
-            while (known)
+            var i = 0;
+            while (known && i < 20)
             {
+                i++;
                 var rndQuestion = Db.GetRandomQuestionByCourse(Course, (int) Math.Floor((double) (RoundNumber-1) / 2));
                 if (!AskedQuestions.Contains(rndQuestion.Id))
                 {
@@ -77,6 +79,11 @@ namespace _15PunkteQuiz.Forms
                         );
                     AskedQuestions.Add(rndQuestion.Id);
                 }
+            }
+
+            if (i > 19)
+            {
+                Close();
             }
 
             currentQuestion = question;
