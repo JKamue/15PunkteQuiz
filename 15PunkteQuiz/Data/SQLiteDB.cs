@@ -33,7 +33,7 @@ namespace _15PunkteQuiz.Data
             tmpConnection.Open();
 
             tmpConnection.Execute(
-                "CREATE TABLE \"Courses\" (\r\n\t\"Id\"\tTEXT NOT NULL UNIQUE,\r\n\t\"Name\"\tTEXT NOT NULL,\r\n\tPRIMARY KEY(\"Name\")\r\n);");
+                "CREATE TABLE \"Courses\" (\r\n\t\"Id\"\tTEXT NOT NULL UNIQUE,\r\n\t\"Name\"\tTEXT NOT NULL,\r\n\tPRIMARY KEY(\"Id\")\r\n);");
 
             tmpConnection.Execute(
                 "CREATE TABLE \"Questions\" (\r\n\t\"Id\"\tTEXT NOT NULL UNIQUE,\r\n\t\"CourseId\"\tTEXT NOT NULL,\r\n\t\"Text\"\tTEXT NOT NULL,\r\n\t\"Difficulty\"\tINTEGER NOT NULL,\r\n\t\"RightAnswer\"\tTEXT NOT NULL,\r\n\t\"WrongAnswer1\"\tTEXT NOT NULL,\r\n\t\"WrongAnswer2\"\tTEXT NOT NULL,\r\n\t\"WrongAnswer3\"\tTEXT NOT NULL,\r\n\tPRIMARY KEY(\"Id\"),\r\n\tFOREIGN KEY(\"CourseId\") REFERENCES \"Courses\"(\"Id\") ON DELETE SET NULL\r\n);");
@@ -43,7 +43,7 @@ namespace _15PunkteQuiz.Data
 
         public List<CourseDto> GetAllCourses()
         {
-            throw new NotImplementedException();
+            return _dbConnection.Query<CourseDto>("SELECT * FROM Courses").ToList();
         }
 
         public List<QuestionDto> GetAllQuestionsByCourse(CourseDto course)

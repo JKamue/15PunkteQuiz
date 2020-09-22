@@ -72,6 +72,7 @@
             this.btnNewCourse.TabIndex = 4;
             this.btnNewCourse.Text = "Hinzufügen";
             this.btnNewCourse.UseVisualStyleBackColor = true;
+            this.btnNewCourse.Click += new System.EventHandler(this.btnNewCourse_Click);
             // 
             // lblNewCourseName
             // 
@@ -124,7 +125,7 @@
             this.Controls.Add(this.lvCourses);
             this.Controls.Add(this.lblHeading);
             this.Name = "CourseSelection";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Wer wird 15 Punkte Schüler?";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
