@@ -48,6 +48,7 @@ namespace _15PunkteQuiz.Forms
 
         private void UpdateQuestionList()
         {
+            lvQuestions.Items.Clear();
             foreach (var question in Db.GetAllQuestionsByCourse(Course))
             {
                 ListViewItem item = lvQuestions.Items.Add(question.DifficultyText());
@@ -61,7 +62,7 @@ namespace _15PunkteQuiz.Forms
         private void DeleteItem(object sender, ListViewColumnMouseEventArgs e)
         {
             var question = (QuestionDto) e.Item.Tag;
-            DialogResult dialogResult = MessageBox.Show("Sicher?", $"Soll '{question.Text}' wirklich gelöscht werden?", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show($"Soll '{question.Text}' wirklich gelöscht werden?", "Sicher?", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 Db.DeleteQuestion(question);
