@@ -73,9 +73,29 @@ namespace _15PunkteQuiz.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _50_used {
+            get {
+                object obj = ResourceManager.GetObject("50_used", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _58999_200 {
             get {
                 object obj = ResourceManager.GetObject("58999-200", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _58999_200_used {
+            get {
+                object obj = ResourceManager.GetObject("58999_200_used", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

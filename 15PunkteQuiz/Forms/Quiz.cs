@@ -29,6 +29,10 @@ namespace _15PunkteQuiz.Forms
         private Question currentQuestion;
         private int lastAnswer = -1;
 
+        private bool fiftyUsed = false;
+
+        private static Random rng = new Random();
+
 
         public Quiz(IDataSource db, CourseDto course)
         {
@@ -94,6 +98,7 @@ namespace _15PunkteQuiz.Forms
         {
             _buttons.ForEach(b => b.BackColor = SystemColors.Control);
             _buttons.ForEach(b => b.FlatAppearance.BorderColor = Color.Black);
+            _buttons.ForEach(b => b.Enabled = true);
 
             for (var i = 0; i < 4; i++)
             {
@@ -126,10 +131,10 @@ namespace _15PunkteQuiz.Forms
            _buttons[num].FlatAppearance.BorderColor = Color.Blue;
            var delay = 1000;
 
-            var answers = new List<int>{0,1,2,3};
+           var answers = new List<int>{0,1,2,3};
            answers.Remove(num);
            answers.Remove(currentQuestion.GetRightAnswer());
-           answers.OrderBy(x => Guid.NewGuid()).ToList();
+           answers = answers.OrderBy(x => Guid.NewGuid()).ToList();
 
            foreach (var answer in answers)
            {
@@ -180,6 +185,28 @@ namespace _15PunkteQuiz.Forms
                 {
                     Close();
                 }
+            }
+        }
+
+        private void pbxGroupJoke_Click(object sender, EventArgs e)
+        {
+            pbxGroupJoker.Image = Properties.Resources._58999_200_used;
+        }
+
+        private void pbxFiftyJoker_Click(object sender, EventArgs e)
+        {
+            if (fiftyUsed)
+                return;
+
+            fiftyUsed = true;
+            pbxFiftyJoker.Image = Properties.Resources._50_used;
+            var answers = new List<int> { 0, 1, 2, 3 };
+            answers.Remove(currentQuestion.GetRightAnswer());
+            answers = answers.OrderBy(x => Guid.NewGuid()).ToList();
+
+            for (var i = 0; i < 2; i++)
+            {
+                _buttons[answers[i]].Enabled = false;
             }
         }
     }
