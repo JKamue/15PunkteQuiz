@@ -130,7 +130,7 @@ namespace _15PunkteQuiz.Forms
 
         private async void AnswerButtonClicked(object sender, EventArgs e)
         {
-            var num = Int16.Parse(((Control)sender).Tag.ToString());
+            var num = int.Parse(((Control)sender).Tag.ToString());
 
            _buttons[num].FlatAppearance.BorderColor = Color.Blue;
            var delay = 1000;
@@ -142,6 +142,9 @@ namespace _15PunkteQuiz.Forms
 
            foreach (var answer in answers)
            {
+               if (!_buttons[answer].Enabled)
+                   continue;
+
                await Task.Delay(delay);
                 _buttons[answer].BackColor = Color.DarkRed;
                delay += 500;
