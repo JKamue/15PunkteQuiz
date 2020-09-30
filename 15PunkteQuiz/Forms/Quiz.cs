@@ -96,9 +96,13 @@ namespace _15PunkteQuiz.Forms
 
         public void DisplayQuestion(Question question)
         {
-            _buttons.ForEach(b => b.BackColor = SystemColors.Control);
-            _buttons.ForEach(b => b.FlatAppearance.BorderColor = Color.Black);
-            _buttons.ForEach(b => b.Enabled = true);
+            _buttons.ForEach(b =>
+            {
+                b.BackColor = SystemColors.Control;
+                b.FlatAppearance.BorderColor = Color.Black;
+                b.Enabled = true;
+            });
+            ActiveControl = null;
 
             for (var i = 0; i < 4; i++)
             {
